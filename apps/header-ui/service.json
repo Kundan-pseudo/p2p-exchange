@@ -1,0 +1,21 @@
+{
+    "kind": "Service",
+    "apiVersion": "v1",
+    "metadata": {
+      "name": "header-ui-service"
+    },
+    "spec": {
+      "type": "NodePort",
+      "selector": {
+        "app": "header-ui"
+      },
+      "ports": [
+        {
+          "protocol": "TCP",
+          "port": 81,
+          "targetPort": 4201,
+          "name": "header-ui-service"
+        }
+      ]
+    }
+  }

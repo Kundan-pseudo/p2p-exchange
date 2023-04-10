@@ -1,0 +1,36 @@
+{
+    "apiVersion": "apps/v1",
+    "kind": "Deployment",
+    "metadata": {
+      "name": "host"
+    },
+    "spec": {
+      "replicas": 1,
+      "selector": {
+        "matchLabels": {
+          "app": "host"
+        }
+      },
+      "template": {
+        "metadata": {
+          "labels": {
+            "app": "host"
+          }
+        },
+        "spec": {
+          "containers": [
+            {
+              "name": "host",
+              "image": "host:latest",
+              "imagePullPolicy": "Never",
+              "ports": [
+                {
+                  "containerPort": 4200
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }

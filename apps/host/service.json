@@ -1,0 +1,21 @@
+{
+    "kind": "Service",
+    "apiVersion": "v1",
+    "metadata": {
+      "name": "host-service"
+    },
+    "spec": {
+      "type": "NodePort",
+      "selector": {
+        "app": "host"
+      },
+      "ports": [
+        {
+          "protocol": "TCP",
+          "port": 80,
+          "targetPort": 4200,
+          "name": "host-service"
+        }
+      ]
+    }
+  }

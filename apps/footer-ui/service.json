@@ -1,0 +1,21 @@
+{
+    "kind": "Service",
+    "apiVersion": "v1",
+    "metadata": {
+      "name": "footer-ui-service"
+    },
+    "spec": {
+      "type": "NodePort",
+      "selector": {
+        "app": "footer-ui"
+      },
+      "ports": [
+        {
+          "protocol": "TCP",
+          "port": 82,
+          "targetPort": 4202,
+          "name": "footer-ui-service"
+        }
+      ]
+    }
+  }

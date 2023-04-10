@@ -1,0 +1,36 @@
+{
+    "apiVersion": "apps/v1",
+    "kind": "Deployment",
+    "metadata": {
+      "name": "footer-ui"
+    },
+    "spec": {
+      "replicas": 1,
+      "selector": {
+        "matchLabels": {
+          "app": "footer-ui"
+        }
+      },
+      "template": {
+        "metadata": {
+          "labels": {
+            "app": "footer-ui"
+          }
+        },
+        "spec": {
+          "containers": [
+            {
+              "name": "footer-ui",
+              "image": "footer-ui:latest",
+              "imagePullPolicy": "Never",
+              "ports": [
+                {
+                  "containerPort": 4202
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }

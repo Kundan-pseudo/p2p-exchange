@@ -1,0 +1,36 @@
+{
+    "apiVersion": "apps/v1",
+    "kind": "Deployment",
+    "metadata": {
+      "name": "content-ui"
+    },
+    "spec": {
+      "replicas": 1,
+      "selector": {
+        "matchLabels": {
+          "app": "content-ui"
+        }
+      },
+      "template": {
+        "metadata": {
+          "labels": {
+            "app": "content-ui"
+          }
+        },
+        "spec": {
+          "containers": [
+            {
+              "name": "content-ui",
+              "image": "content-ui:latest",
+              "imagePullPolicy": "Never",
+              "ports": [
+                {
+                  "containerPort": 4203
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }

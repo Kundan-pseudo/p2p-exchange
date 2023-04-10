@@ -1,0 +1,36 @@
+{
+    "apiVersion": "apps/v1",
+    "kind": "Deployment",
+    "metadata": {
+      "name": "header-ui"
+    },
+    "spec": {
+      "replicas": 1,
+      "selector": {
+        "matchLabels": {
+          "app": "header-ui"
+        }
+      },
+      "template": {
+        "metadata": {
+          "labels": {
+            "app": "header-ui"
+          }
+        },
+        "spec": {
+          "containers": [
+            {
+              "name": "header-ui",
+              "image": "header-ui:latest",
+              "imagePullPolicy": "Never",
+              "ports": [
+                {
+                  "containerPort": 4201
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
